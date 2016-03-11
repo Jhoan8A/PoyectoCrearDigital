@@ -1,0 +1,19 @@
+<?php 
+	
+	require('conexion.php');
+	
+	$id_materia=$_POST['idmateria'];
+	$id_estudiante=$_POST['idestudiante'];
+	
+	
+	$query="INSERT INTO inscribirse (id_materia, id_estudiante) VALUES ('$id_materia','$id_estudiante')";
+	
+	$resultado=$con->query($query);
+	if($query!=null){
+				print "<script>alert(\"Registro exitoso.\");window.location='../obtenertodaslasmaterias.php';</script>";
+			}
+	
+
+mysql_close($con);
+
+?>
